@@ -1,107 +1,39 @@
 // JavaScript
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Знаходимо кнопку запуску (переконайся, що в HTML є кнопка з id="start")
-const startBtn = document.querySelector('#start');
-
-startBtn.addEventListener('click', function() {
-    // 1. Знайомство
-    let name = prompt("Дарова я твій чат бот!Як тебе називати?");
-    
-    if (name === null || name.trim() === "") {
-        name = "Друже";
-    }
-
-    // 2. Вибір дії
-    let choice = prompt(
-        "Радий бачити тебе, " + name + "!\n" +
-        "Го шось поробимо?\n" +
-        "1 — Майн\n" +
-        "2 — Кс 2\n" +
-        "3 — Дс\n" +
-        "4 — Бс\n" +
-        "5 — Загадка\n" +
-        "6 — Зробити новий сайт\n" +
-        "7 — Як зайти на 100 моделей в кс\n" +
-        "8 — Жоский музон\n" +
-        "9 — Мажор 2021\n" +
-        "10 — Інше\n" +
-        "Введи номер дії:"
-    );
-
-    // 3. Обробка вибору через if/else
-    if (choice === "1") {
-        alert("Ок мій нік:ChatGpt67");
-        alert("Погнали");
-
-    } else if (choice === "2") {
-        let answer = prompt("Ок який твій нік?");
-        
-        if (answer !== null && answer.toLowerCase().includes("s1mple")) {
-            alert("Ок давай захожу");
-        } else {
-            alert("Не можу тебе найти");
-        }
-
-    } else if (choice === "3") {
-        let go = confirm("Тебе на іншу сторінку перенесе ок?");
-        if (go) {
-            window.location.href = "https://youtu.be/D2N81eIh8lA?si=fsU42XZLWYtlOw6_"; 
-        } else {
-            alert("Жалко там наша група ии");
-        }
-        }else if (choice === "4") {
-        alert("Ок мій нік:Andrey228");
-        alert("Погнали");
-        
-        }else if (choice === "5") {
-        let answer = prompt("Він як маленький комп'ютер:У ньому є ігри, інтернет.Тонкий, легкий і зручний,Називається...?");
-        
-        if (answer !== null && answer.toLowerCase().includes("планшет")) {
-            alert("Правильно");
-        } else {
-            alert("Трохи не те");
-        }
-        }else if (choice === "6") {
-         let go = confirm("Тебе на іншу сторінку перенесе ок?");
-        if (go) {
-            window.location.href = "https://html-css-js.com/"; 
-        } else {
-            alert("Жалко там сайт html css js");
-        }
-
-        }else if (choice === "7") {
-        let go = confirm("Тебе на іншу сторінку перенесе ок?");
-        if (go) {
-            window.location.href = "https://www.tiktok.com/@interial_cs2/video/7525481908625476897?is_from_webapp=1&sender_device=pc&web_id=7611174082407859719"; 
-        } else {
-            alert("Жалко там була така як зайти");
-        }
-
- }else if (choice === "8") {
-        let go = confirm("Тебе на іншу сторінку перенесе ок?");
-        if (go) {
-            window.location.href = "https://www.tiktok.com/@love_seal670/video/7501589149061909768?is_from_webapp=1&sender_device=pc&web_id=7611174082407859719"; 
-        } else {
-            alert("Жалко там була така ржака");
-        }
-
- }else if (choice === "9") {
-        let go = confirm("Тебе на іншу сторінку перенесе ок?");
-        if (go) {
-            window.location.href = "https://youtu.be/SKKZGvtxgPU?si=bqbAjq7l6n81pgw3"; 
-        } else {
-            alert("Жалко там був Мажор по кс2 з 2021 року");
-        }
-
- }else if (choice === "10") {
-        let name = prompt("Які твої побажання?");
-            if (name !== null && name.trim() !== "") {
-                alert("Добре в наступній весрії буде: " + name + "!");
-                
-            } 
-    } else {
-        alert("Ой, " + name + ", здається, шось тут не те");
-    }
-});
-    
+     2	  const greetingBtn = document.querySelector('#start');
+     3	  const welcomeMessage = document.querySelector('#welcomeMessage');
+     4	  const memoryForm = document.querySelector('#memoryForm');
+     5	  const memoryInput = document.querySelector('#memoryInput');
+     6	  const memoryOutput = document.querySelector('#memoryOutput');
+     7	  const memoryList = document.querySelector('#memoryList');
+     8	
+     9	  const greetings = [
+    10	    'Сімʼя — це місце, де тебе завжди чекають 💛',
+    11	    'Разом ми сильніші, тепліші та щасливіші 🤍',
+    12	    'Найцінніші миті — ті, що проведені з рідними ✨'
+    13	  ];
+    14	
+    15	  greetingBtn.addEventListener('click', () => {
+    16	    const randomIndex = Math.floor(Math.random() * greetings.length);
+    17	    welcomeMessage.textContent = greetings[randomIndex];
+    18	  });
+    19	
+    20	  memoryForm.addEventListener('submit', (event) => {
+    21	    event.preventDefault();
+    22	
+    23	    const text = memoryInput.value.trim();
+    24	
+    25	    if (!text) {
+    26	      memoryOutput.textContent = 'Будь ласка, введіть спогад перед додаванням.';
+    27	      return;
+    28	    }
+    29	
+    30	    const item = document.createElement('li');
+    31	    item.textContent = text;
+    32	    memoryList.prepend(item);
+    33	
+    34	    memoryOutput.textContent = 'Спогад успішно додано 💫';
+    35	    memoryInput.value = '';
+    36	    memoryInput.focus();
+    37	  });
+    38	});
