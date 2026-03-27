@@ -1,74 +1,189 @@
-/* CSS styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg: #f8f7ff;
+  --text: #1f2233;
+  --muted: #61657a;
+  --brand: #7a5cff;
+  --brand-dark: #5e45d6;
+  --card: #ffffff;
+  --line: #ecebff;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-    margin: 0px;
-    font-family: "Inter", sans-serif;
-    background-color: black;
-
-}
-header{
-  
-}
-   
-
-.menu{
-    list-style: none;
-    height: 35;
-    display: flex;
-   justify-content: space-between;
-   
-}
-.logo{
-    width: 40;
-}
-.block{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-    border: black solid 3px;
-    border-radius: 50px;
-    background-color: grey;
-}
-a{
-    color: lightgrey;
-    border: 3px solid red;
-    border-radius: 50px;
-    padding: 5px;
-    background-color: black;
-}
-.img2{
-    border-radius: 50px;
-   float: right;
-}
-.img3{
-    border-radius: 50%;
-    float: right;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #fff 0%, var(--bg) 70%);
 }
 
-.img{
-    border-radius: 15%;
+.container {
+  width: min(1050px, 92%);
+  margin: 0 auto;
 }
-.img4{
-    float: left;
-    border-radius:15% ;
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
 }
-footer{
-    color: black;
-    background-color: white;
-    border-radius: 5%;
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  gap: 20px;
 }
-.start-control{
-    background-color: grey;
-    border: 3px solid black;
-    width: 400px;
-    padding: 15px 40px;
-    font-size: 20px;
-    font-weight:900;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 20px;
-    text-transform: uppercase;
-    border-radius: 40%;
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 32px;
+}
+
+.brand {
+  margin: 0;
+  font-weight: 800;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.menu a:hover {
+  background: #f0edff;
+}
+
+.hero {
+  padding: 70px 0 40px;
+}
+
+.hero-content {
+  background: radial-gradient(circle at top left, #ebe6ff, #fff 65%);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 46px);
+}
+
+.hero p,
+.section p,
+.traditions-list li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.section {
+  padding: 22px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.traditions-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.primary-btn {
+  margin-top: 8px;
+  background: var(--brand);
+  color: white;
+  padding: 12px 18px;
+}
+
+.primary-btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  background: #f0edff;
+  color: var(--brand-dark);
+  padding: 10px 16px;
+}
+
+.secondary-btn:hover {
+  background: #e4ddff;
+}
+
+.memory-output {
+  min-height: 26px;
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+.site-footer {
+  margin-top: 34px;
+  padding: 28px 0 34px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+
+.copyright {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding: 22px;
+  }
 }
