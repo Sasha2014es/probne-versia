@@ -1,0 +1,74 @@
+/* CSS styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    margin: 0px;
+    font-family: "Inter", sans-serif;
+    background-color: black;
+
+}
+header{
+  
+}
+   
+
+.menu{
+    list-style: none;
+    height: 35;
+    display: flex;
+   justify-content: space-between;
+   
+}
+.logo{
+    width: 40;
+}
+.block{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    border: black solid 3px;
+    border-radius: 50px;
+    background-color: grey;
+}
+a{
+    color: lightgrey;
+    border: 3px solid red;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: black;
+}
+.img2{
+    border-radius: 50px;
+   float: right;
+}
+.img3{
+    border-radius: 50%;
+    float: right;
+}
+
+.img{
+    border-radius: 15%;
+}
+.img4{
+    float: left;
+    border-radius:15% ;
+}
+footer{
+    color: black;
+    background-color: white;
+    border-radius: 5%;
+}
+.start-control{
+    background-color: grey;
+    border: 3px solid black;
+    width: 400px;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight:900;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    text-transform: uppercase;
+    border-radius: 40%;
+}
